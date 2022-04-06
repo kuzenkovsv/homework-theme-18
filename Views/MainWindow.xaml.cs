@@ -52,26 +52,6 @@ namespace homework_theme_18.Views
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            OrderHistoryWindow oh = new OrderHistoryWindow();
-
-            var data = clientsTable.SelectedItem as Clients;
-            oh.Title = $"История заказов клиента {data.LFMName}";
-            context = new MSSQLLocalProductDBEntities();
-            context.Orders.Load();
-
-            oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail == $"{data.Email}");
-
-            oh.ShowDialog();
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            AddClientViewModel addClientViewModel = new AddClientViewModel();
-            AddClientWindow addСlient = new AddClientWindow(addClientViewModel);
-            addСlient.ShowDialog();
-        }
+        
     }
 }

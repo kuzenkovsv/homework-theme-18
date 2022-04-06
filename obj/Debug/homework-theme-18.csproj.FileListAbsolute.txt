@@ -27,3 +27,32 @@ D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\hom
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\Views\EditCLient.baml
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\Views\NewOrderWindow.baml
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\Views\OrderHistoryWindow.baml
+C:\Users\Сергей\Desktop\homework-theme-18\bin\Debug\homework-theme-18.exe.config
+C:\Users\Сергей\Desktop\homework-theme-18\bin\Debug\homework-theme-18.exe
+C:\Users\Сергей\Desktop\homework-theme-18\bin\Debug\homework-theme-18.pdb
+C:\Users\Сергей\Desktop\homework-theme-18\bin\Debug\EntityFramework.dll
+C:\Users\Сергей\Desktop\homework-theme-18\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Сергей\Desktop\homework-theme-18\bin\Debug\EntityFramework.xml
+C:\Users\Сергей\Desktop\homework-theme-18\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18.csproj.AssemblyReference.cache
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\AddClientWindow.g.cs
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\EditCLient.g.cs
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\NewOrderWindow.g.cs
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\OrderHistoryWindow.g.cs
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\App.g.cs
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18_Content.g.cs
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18_MarkupCompile.cache
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18_MarkupCompile.lref
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\AddClientWindow.baml
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\EditCLient.baml
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\MainWindow.baml
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\NewOrderWindow.baml
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\Views\OrderHistoryWindow.baml
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18.g.resources
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework_theme_18.Properties.Resources.resources
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18.csproj.GenerateResource.cache
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18.csproj.CoreCompileInputs.cache
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18.csproj.CopyComplete
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18.exe
+C:\Users\Сергей\Desktop\homework-theme-18\obj\Debug\homework-theme-18.pdb

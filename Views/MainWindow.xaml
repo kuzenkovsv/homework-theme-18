@@ -47,11 +47,11 @@
                             Command="{Binding AddOrderCommand}" 
                             CommandParameter="{Binding ElementName=Bean}"/>-->
 
-                    <Button Grid.Row="1" Grid.Column="0" Content="Ист заказов Command" 
+                    <Button Grid.Row="1" Grid.Column="1" Content="История заказов" 
                             Command="{Binding OrderHistory}" 
                             CommandParameter="{Binding ElementName=clientsTable, Path=SelectedItem}"/>
 
-                    <Button Grid.Row="1" Grid.Column="1" Content="История заказов Click" Click="Button_Click"/>
+                    <!--<Button Grid.Row="1" Grid.Column="1" Content="История заказов Click" Click="Button_Click"/>-->
 
                     <!--<Button Grid.Row="1" Grid.Column="2" Content="Удалить клиента" 
                             Command="{Binding DeleteClient}" 
@@ -60,11 +60,10 @@
                     <!--<Button Grid.Row="1" Grid.Column="3" Content="Изменить клиента" 
                             Command="{Binding EditClient}" CommandParameter="{Binding ElementName=Bean}"/>-->
 
-                    <Button Grid.Row="1" Grid.Column="3" Content="Добав клиента Command" 
+                    <Button Grid.Row="1" Grid.Column="4" Content="Добавить клиента" 
                             Command="{Binding AddClient}" CommandParameter="{Binding ElementName=Bean}"/>
 
-                    <Button Grid.Row="1" Grid.Column="4" Content="Добавить клиента Click" Click="Button_Click_1" 
-                            />
+                    <!--<Button Grid.Row="1" Grid.Column="4" Content="Добавить клиента Click" Click="Button_Click_1"/>-->
 
                 </Grid>
             </TabItem>
