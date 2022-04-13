@@ -21,15 +21,11 @@ namespace homework_theme_18.Views
     /// </summary>
     public partial class OrderHistoryWindow : Window
     {
-        //MSSQLLocalProductDBEntities context;
 
-        public OrderHistoryWindow()
+        public OrderHistoryWindow(OrderHistoryViewModel orderHistoryViewModel)
         {
+            DataContext = orderHistoryViewModel;
             InitializeComponent();
-            //context = new MSSQLLocalProductDBEntities();
-            //context.Orders.Load();
-
-            //history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(e => e.Id > 5);
         }
     }
 }

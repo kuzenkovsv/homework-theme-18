@@ -11,7 +11,8 @@ namespace homework_theme_18.ViewModels
 {
     public class MainViewModel
     {
-        //MSSQLLocalProductDBEntities context;
+        MSSQLLocalProductDBEntities context;
+
 
         /// <summary>
         /// История заказов
@@ -24,8 +25,32 @@ namespace homework_theme_18.ViewModels
                 return orderHistory ??
                   (orderHistory = new RelayCommand(obj =>
                   {
-                      OrderHistoryWindow oh = new OrderHistoryWindow();
-                      oh.ShowDialog();
+                      OrderHistoryViewModel orderHistoryViewModel = new OrderHistoryViewModel();
+                      OrderHistoryWindow oh = new OrderHistoryWindow(orderHistoryViewModel);
+
+                      if (obj is Clients data)
+                      {
+                          oh.Title = $"История заказов клиента {data.LFMName}";
+
+
+                          try
+                          {
+                              context = new MSSQLLocalProductDBEntities();
+                              context.Orders.Load();
+                              oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail == $"{data.Email}");
+                              //oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail.Contains(data.Email));
+                          }
+                          catch (Exception e4)
+                          {
+                              MessageBox.Show($"{e4.Message}", "Ошибка-e4!", MessageBoxButton.OK, MessageBoxImage.Information);
+                          }
+
+                          //oh.history.DataContext = sql1dt.DefaultView;
+
+                          oh.ShowDialog();
+
+                      }
+
 
 
                   }
@@ -45,13 +70,118 @@ namespace homework_theme_18.ViewModels
                 return addClient ??
                   (addClient = new RelayCommand(obj =>
                   {
-                      AddClientViewModel addClientViewModel = new AddClientViewModel();
+                      var win = obj as MainWindow;
+                      AddClientViewModel addClientViewModel = new AddClientViewModel(win);
                       AddClientWindow addСlient = new AddClientWindow(addClientViewModel);
                       addСlient.ShowDialog();
 
                   }));
             }
         }
+
+        /// <summary>
+        /// Удаление клиента
+        /// </summary>
+        private RelayCommand deleteClient;
+        public RelayCommand DeleteClient
+        {
+            get
+            {
+                return deleteClient ??
+                  (deleteClient = new RelayCommand(obj =>
+                  {
+                      
+                      try
+                      {
+                          MainWindow win = obj as MainWindow;
+                          context = new MSSQLLocalProductDBEntities();
+                          Clients client = win.clientsTable.SelectedItem as Clients;
+                          context.Clients.Remove(client);
+
+                          context.SaveChanges();
+                          context.Clients.Load();
+                          win.clientsTable.ItemsSource = context.Clients.Local.ToBindingList<Clients>();
+
+                      }
+                      catch (Exception e3)
+                      {
+                          MessageBox.Show($"{e3.Message}", "Ошибка-e3!", MessageBoxButton.OK, MessageBoxImage.Information);
+                      }
+
+                  }
+                  ));
+            }
+        }
+
+        /// <summary>
+        /// Изменение клиента
+        /// </summary>
+        private RelayCommand editClient;
+        public RelayCommand EditClient
+        {
+            get
+            {
+                return editClient ??
+                  (editClient = new RelayCommand(obj =>
+                  {
+                      var win = obj as MainWindow;
+                      Clients data = win.clientsTable.SelectedItem as Clients;
+
+                      EditClientViewModel editClientViewModel = new EditClientViewModel(win);
+                      EditCLient editСl = new EditCLient(editClientViewModel);
+
+                      editСl.Title = $"Изменение клиента {data.LFMName}";
+                      editСl.ID.Text = data.Id.ToString();
+                      editСl.ClientName.Text = data.LFMName.ToString();
+                      editСl.Tel.Text = data.Telephone.ToString();
+                      editСl.Email.Text = data.Email.ToString();
+                      editСl.ShowDialog();
+
+                  }));
+            }
+        }
+
+
+        /// <summary>
+        /// Добавление заказа
+        /// </summary>
+        private RelayCommand addOrderCommand;
+        public RelayCommand AddOrderCommand
+        {
+            get
+            {
+                return addOrderCommand ??
+                  (addOrderCommand = new RelayCommand(obj =>
+                  {
+                      var win = obj as MainWindow;
+                      NewOrderViewModel newOrderView = new NewOrderViewModel(win);
+                      NewOrderWindow newOrder = new NewOrderWindow(newOrderView);
+
+                      if (win.clientsTable.SelectedItem is Clients data)
+                      {
+                          newOrder.Title = $"Новый заказ клиента {data.LFMName}";
+                          newOrder.ClientEmail.Text = $"{data.Email}";
+                          context = new MSSQLLocalProductDBEntities();
+                          context.Product.Load();
+                          
+
+                          try
+                          {
+                              newOrder.productName.ItemsSource = context.Product.Local.ToBindingList<Product>();
+
+                              newOrder.ShowDialog();
+                          }
+                          catch (Exception e5)
+                          {
+                              MessageBox.Show($"{e5.Message}", "Ошибка-e5!", MessageBoxButton.OK, MessageBoxImage.Information);
+                          }
+
+                      }
+
+                  }));
+            }
+        }
+
 
         public MainViewModel()
         {

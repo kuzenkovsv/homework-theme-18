@@ -28,6 +28,7 @@ namespace homework_theme_18.Views
         {
             InitializeComponent();
             context = new MSSQLLocalProductDBEntities();
+            DataContext = new MainViewModel();
 
             try
             {
@@ -40,6 +41,7 @@ namespace homework_theme_18.Views
                 context.Orders.Load();
                 order.ItemsSource = context.Orders.Local.ToBindingList<Orders>();
                 //order.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.Id > 5);
+                //order.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail == "Email_4");
 
 
 
@@ -52,6 +54,44 @@ namespace homework_theme_18.Views
 
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //OrderHistoryWindow oh = new OrderHistoryWindow();
+
+            OrderHistoryViewModel orderHistoryViewModel = new OrderHistoryViewModel();
+            OrderHistoryWindow oh = new OrderHistoryWindow(orderHistoryViewModel);
+            var data = clientsTable.SelectedItem as Clients;
+            oh.Title = $"История заказов клиента {data.LFMName}";
+            //context = new MSSQLLocalProductDBEntities();
+            //context.Orders.Load();
+            //using (MSSQLLocalProductDBEntities db = new MSSQLLocalProductDBEntities())
+            //{
+                List<Orders> history = new List<Orders>();
+                var orders = context.Orders;
+                foreach (var item in context.Orders)
+                {
+                if (item.ClientEmail == data.Email)
+                    //if (data.Email.Equals(item.ClientEmail))
+                    //if (item.Id == 3)
+
+                {
+                    history.Add(item);
+                    }
+                }
+
+            oh.history.ItemsSource = history;
+            oh.ShowDialog();
+
+            //}
+
+
+            ////oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail == $"{data.Email}");
+            //oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a =>  a.ClientEmail.Contains(data.Email));
+
+
+            //oh.ShowDialog();
+
+        }
+
     }
 }

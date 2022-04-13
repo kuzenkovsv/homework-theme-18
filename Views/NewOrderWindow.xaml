@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:homework_theme_18.Views"
         mc:Ignorable="d"
-        Title="NewOrderWindow" Height="450" Width="800">
+        Title="NewOrderWindow" Height="300" Width="400" ResizeMode="NoResize" Name="NewOrder">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" 
+                   Text="Почта" VerticalAlignment="Center" Padding="10"/>
+        <TextBox x:Name="ClientEmail" Grid.Row="0" Grid.Column="1" Background="Aqua" IsReadOnly="True"
+                 HorizontalAlignment="Left" Height="23" Width="170" VerticalContentAlignment="Center"
+                 TextWrapping="NoWrap" VerticalAlignment="Center" Text=""/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" 
+                   Text="Товар" VerticalAlignment="Center" Padding="10"/>
+        <ComboBox x:Name="productName" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                  Width="170" Padding="5" ItemsSource="{Binding}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Name="productNameText" Text="{Binding ProductName}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" 
+                   Text="Количество" VerticalAlignment="Center" Padding="10"/>
+        <ComboBox x:Name="Quantity" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                  Width="170" Padding="5">
+            <ComboBoxItem Content="1" IsSelected="True"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+        </ComboBox>
+
+        <Button Name="Cancel" Content="Отмена" HorizontalAlignment="Center"  
+                Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Width="75" IsCancel="True"/>
+        <Button Name="OrderAdd" Content="Добавить" HorizontalAlignment="Center"  
+                Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="75" Command="{Binding NewOrderAdd}" 
+                CommandParameter="{Binding ElementName=NewOrder}"/>
     </Grid>
 </Window>
+

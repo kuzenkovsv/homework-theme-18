@@ -1,4 +1,5 @@
-﻿using System;
+﻿using homework_theme_18.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,9 @@ namespace homework_theme_18.Views
     /// </summary>
     public partial class EditCLient : Window
     {
-        public EditCLient()
+        public EditCLient(EditClientViewModel editClientViewModel)
         {
+            DataContext = editClientViewModel;
             InitializeComponent();
         }
     }

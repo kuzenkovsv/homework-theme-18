@@ -43,27 +43,25 @@
                         
                     </DataGrid>
 
-                    <!--<Button Grid.Row="1" Grid.Column="0" Content="Новый заказ"
+                    <Button Grid.Row="1" Grid.Column="0" Content="Новый заказ"
                             Command="{Binding AddOrderCommand}" 
-                            CommandParameter="{Binding ElementName=Bean}"/>-->
+                            CommandParameter="{Binding ElementName=Bean}"/>
 
                     <Button Grid.Row="1" Grid.Column="1" Content="История заказов" 
                             Command="{Binding OrderHistory}" 
                             CommandParameter="{Binding ElementName=clientsTable, Path=SelectedItem}"/>
 
-                    <!--<Button Grid.Row="1" Grid.Column="1" Content="История заказов Click" Click="Button_Click"/>-->
-
-                    <!--<Button Grid.Row="1" Grid.Column="2" Content="Удалить клиента" 
+                    <Button Grid.Row="1" Grid.Column="2" Content="Удалить клиента" 
                             Command="{Binding DeleteClient}" 
-                            CommandParameter="{Binding ElementName=clientsTable, Path=SelectedItem}"/>-->
+                            CommandParameter="{Binding ElementName=Bean}"/>
 
-                    <!--<Button Grid.Row="1" Grid.Column="3" Content="Изменить клиента" 
-                            Command="{Binding EditClient}" CommandParameter="{Binding ElementName=Bean}"/>-->
+                    <Button Grid.Row="1" Grid.Column="3" Content="Изменить клиента" 
+                            Command="{Binding EditClient}" 
+                            CommandParameter="{Binding ElementName=Bean}"/>
 
                     <Button Grid.Row="1" Grid.Column="4" Content="Добавить клиента" 
-                            Command="{Binding AddClient}" CommandParameter="{Binding ElementName=Bean}"/>
-
-                    <!--<Button Grid.Row="1" Grid.Column="4" Content="Добавить клиента Click" Click="Button_Click_1"/>-->
+                            Command="{Binding AddClient}" 
+                            CommandParameter="{Binding ElementName=Bean}"/>
 
                 </Grid>
             </TabItem>
