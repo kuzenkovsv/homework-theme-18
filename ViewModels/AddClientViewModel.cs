@@ -30,7 +30,7 @@ namespace homework_theme_18.ViewModels
                       {
                           if (newClient.ClientName.Text != null & newClient.Email.Text != null)
                           {
-                              using (MSSQLLocalProductDBEntities db = new MSSQLLocalProductDBEntities())
+                              using (BeanMagas db = new BeanMagas())
                               {
                                   Clients newcl = new Clients
                                   {

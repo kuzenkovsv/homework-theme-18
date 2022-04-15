@@ -31,7 +31,7 @@ namespace homework_theme_18.ViewModels
                       {
                           if (newOrd.productName != null)
                           {
-                              using (MSSQLLocalProductDBEntities db = new MSSQLLocalProductDBEntities())
+                              using (BeanMagas db = new BeanMagas())
                               {
                                   Product row = newOrd.productName.SelectedItem as Product;
                                   Orders nOrd = new Orders

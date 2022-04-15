@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{20539552-B6B3-4189-A95B-68A17005FB9C}</ProjectGuid>
+    <ProjectGuid>{199BB263-194E-4C65-8754-9F19282EB73B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>homework_theme_18</RootNamespace>
     <AssemblyName>homework-theme-18</AssemblyName>
@@ -67,6 +67,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Clients.cs" />
+    <Compile Include="BeanMagas.cs" />
+    <Compile Include="Orders.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModels\AddClientViewModel.cs" />
     <Compile Include="ViewModels\EditClientViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -94,25 +99,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BeanMagas.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BeanMagas.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BeanMagas.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BeanMagas.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BeanMagas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BeanMagas.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Clients.cs">
-      <DependentUpon>BeanMagas.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RelayCommand.cs" />
     <Compile Include="Views\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
@@ -133,12 +119,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Orders.cs">
-      <DependentUpon>BeanMagas.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>BeanMagas.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -156,13 +136,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="BeanMagas.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BeanMagas.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="BeanMagas.edmx.diagram">
-      <DependentUpon>BeanMagas.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -171,21 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="BeanMagas.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BeanMagas.Context.cs</LastGenOutput>
-      <DependentUpon>BeanMagas.edmx</DependentUpon>
-    </Content>
-    <Content Include="BeanMagas.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BeanMagas.edmx</DependentUpon>
-      <LastGenOutput>BeanMagas.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

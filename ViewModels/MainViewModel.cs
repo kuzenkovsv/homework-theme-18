@@ -11,7 +11,7 @@ namespace homework_theme_18.ViewModels
 {
     public class MainViewModel
     {
-        MSSQLLocalProductDBEntities context;
+        BeanMagas context;
 
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace homework_theme_18.ViewModels
 
                           try
                           {
-                              context = new MSSQLLocalProductDBEntities();
+                              context = new BeanMagas();
                               context.Orders.Load();
                               oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail == $"{data.Email}");
                               //oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail.Contains(data.Email));
@@ -90,12 +90,15 @@ namespace homework_theme_18.ViewModels
                 return deleteClient ??
                   (deleteClient = new RelayCommand(obj =>
                   {
-                      
+
                       try
                       {
                           MainWindow win = obj as MainWindow;
-                          context = new MSSQLLocalProductDBEntities();
-                          Clients client = win.clientsTable.SelectedItem as Clients;
+                          context = new BeanMagas();
+                          Clients cl = win.clientsTable.SelectedItem as Clients;
+                          int id = cl.Id;
+
+                          Clients client = context.Clients.Find(id);
                           context.Clients.Remove(client);
 
                           context.SaveChanges();
@@ -161,9 +164,9 @@ namespace homework_theme_18.ViewModels
                       {
                           newOrder.Title = $"Новый заказ клиента {data.LFMName}";
                           newOrder.ClientEmail.Text = $"{data.Email}";
-                          context = new MSSQLLocalProductDBEntities();
+                          context = new BeanMagas();
                           context.Product.Load();
-                          
+
 
                           try
                           {

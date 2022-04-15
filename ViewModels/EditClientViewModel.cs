@@ -34,19 +34,24 @@ namespace homework_theme_18.ViewModels
 
                               int ID = Convert.ToInt32(edClient.ID);
 
-                              using (MSSQLLocalProductDBEntities db = new MSSQLLocalProductDBEntities())
+                              using (BeanMagas db = new BeanMagas())
                               {
-                                  foreach (var item in db.Clients)
-                                  {
-                                      if (item.Id == ID)
-                                      {
-                                          item.LFMName = edClient.ClientName.Text;
-                                          item.Telephone = edClient.Tel.Text;
-                                          item.Email = edClient.Email.Text;
-                                          db.SaveChanges();
-                                      }
-                                  }
+                                  //foreach (var item in db.Clients)
+                                  //{
+                                  //    if (item.Id == ID)
+                                  //    {
+                                  //        item.LFMName = edClient.ClientName.Text;
+                                  //        item.Telephone = edClient.Tel.Text;
+                                  //        item.Email = edClient.Email.Text;
+                                  //        db.SaveChanges();
+                                  //    }
+                                  //}
 
+                                  Clients client = db.Clients.Find(ID);
+                                  client.LFMName = edClient.ClientName.Text;
+                                  client.Telephone = edClient.Tel.Text;
+                                  client.Email = edClient.Email.Text;
+                                  db.SaveChanges();
 
                                   db.Clients.Load();
                                   t.clientsTable.ItemsSource = db.Clients.Local.ToBindingList<Clients>().OrderBy(e => e.Id);
