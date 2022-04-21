@@ -26,3 +26,4 @@ D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\hom
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework-theme-18.csproj.CopyComplete
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework-theme-18.exe
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework-theme-18.pdb
+D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework_theme_18.Migrations.MigrateDB.resources

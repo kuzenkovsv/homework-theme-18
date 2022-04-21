@@ -69,6 +69,11 @@
     </ApplicationDefinition>
     <Compile Include="Clients.cs" />
     <Compile Include="BeanMagas.cs" />
+    <Compile Include="Migrations\202204210507330_MigrateDB.cs" />
+    <Compile Include="Migrations\202204210507330_MigrateDB.designer.cs">
+      <DependentUpon>202204210507330_MigrateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Orders.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="RelayCommand.cs" />
@@ -132,6 +137,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202204210507330_MigrateDB.resx">
+      <DependentUpon>202204210507330_MigrateDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
