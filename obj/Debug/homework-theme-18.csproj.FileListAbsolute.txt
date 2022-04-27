@@ -26,4 +26,32 @@ D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\hom
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework-theme-18.csproj.CopyComplete
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework-theme-18.exe
 D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework-theme-18.pdb
-D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework_theme_18.Migrations.MigrateDB.resources
+D:\Prog_C#\homework-theme-18\bin\Debug\homework-theme-18.exe.config
+D:\Prog_C#\homework-theme-18\bin\Debug\homework-theme-18.exe
+D:\Prog_C#\homework-theme-18\bin\Debug\homework-theme-18.pdb
+D:\Prog_C#\homework-theme-18\bin\Debug\EntityFramework.dll
+D:\Prog_C#\homework-theme-18\bin\Debug\EntityFramework.SqlServer.dll
+D:\Prog_C#\homework-theme-18\bin\Debug\EntityFramework.xml
+D:\Prog_C#\homework-theme-18\bin\Debug\EntityFramework.SqlServer.xml
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.csproj.AssemblyReference.cache
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\AddClientWindow.g.cs
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\EditCLient.g.cs
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\MainWindow.g.cs
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\NewOrderWindow.g.cs
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\OrderHistoryWindow.g.cs
+D:\Prog_C#\homework-theme-18\obj\Debug\App.g.cs
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18_MarkupCompile.cache
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18_MarkupCompile.lref
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\AddClientWindow.baml
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\EditCLient.baml
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\MainWindow.baml
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\NewOrderWindow.baml
+D:\Prog_C#\homework-theme-18\obj\Debug\Views\OrderHistoryWindow.baml
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.g.resources
+D:\Prog_C#\homework-theme-18\obj\Debug\homework_theme_18.Properties.Resources.resources
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.csproj.GenerateResource.cache
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.csproj.CoreCompileInputs.cache
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.csproj.CopyComplete
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.exe
+D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.pdb
+D:\Prog_C#\homework-theme-18\obj\Debug\homework_theme_18.Migrations.MigrateDB26042022.resources

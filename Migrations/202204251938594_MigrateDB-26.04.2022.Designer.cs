@@ -7,13 +7,13 @@ namespace homework_theme_18.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class MigrateDB : IMigrationMetadata
+    public sealed partial class MigrateDB26042022 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrateDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrateDB26042022));
         
         string IMigrationMetadata.Id
         {
-            get { return "202204210507330_MigrateDB"; }
+            get { return "202204251938594_MigrateDB-26.04.2022"; }
         }
         
         string IMigrationMetadata.Source

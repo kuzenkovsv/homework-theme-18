@@ -39,6 +39,7 @@ namespace homework_theme_18.ViewModels
                               context.Orders.Load();
                               oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail == $"{data.Email}");
                               //oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail.Contains(data.Email));
+
                           }
                           catch (Exception e4)
                           {

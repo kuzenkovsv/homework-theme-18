@@ -10,6 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "homework_theme_18.BeanMagas";
         }
 
         protected override void Seed(homework_theme_18.BeanMagas context)
