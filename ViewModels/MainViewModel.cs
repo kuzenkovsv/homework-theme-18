@@ -11,8 +11,8 @@ namespace homework_theme_18.ViewModels
 {
     public class MainViewModel
     {
-        BeanMagas context;
-
+        
+        DatabaseAccesses dbA = new DatabaseAccesses();
 
         /// <summary>
         /// История заказов
@@ -35,10 +35,7 @@ namespace homework_theme_18.ViewModels
 
                           try
                           {
-                              context = new BeanMagas();
-                              context.Orders.Load();
-                              oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail == $"{data.Email}");
-                              //oh.history.ItemsSource = context.Orders.Local.ToBindingList<Orders>().Where(a => a.ClientEmail.Contains(data.Email));
+                              oh.history.ItemsSource = dbA.ShowOrdersByEmailMethod(data.Email);
 
                           }
                           catch (Exception e4)
@@ -46,13 +43,9 @@ namespace homework_theme_18.ViewModels
                               MessageBox.Show($"{e4.Message}", "Ошибка-e4!", MessageBoxButton.OK, MessageBoxImage.Information);
                           }
 
-                          //oh.history.DataContext = sql1dt.DefaultView;
-
                           oh.ShowDialog();
 
                       }
-
-
 
                   }
                   ));
@@ -95,16 +88,9 @@ namespace homework_theme_18.ViewModels
                       try
                       {
                           MainWindow win = obj as MainWindow;
-                          context = new BeanMagas();
                           Clients cl = win.clientsTable.SelectedItem as Clients;
                           int id = cl.Id;
-
-                          Clients client = context.Clients.Find(id);
-                          context.Clients.Remove(client);
-
-                          context.SaveChanges();
-                          context.Clients.Load();
-                          win.clientsTable.ItemsSource = context.Clients.Local.ToBindingList<Clients>();
+                          win.clientsTable.ItemsSource = dbA.DelClientMethod(id).Clients.Local.ToBindingList<Clients>();
 
                       }
                       catch (Exception e3)
@@ -165,13 +151,10 @@ namespace homework_theme_18.ViewModels
                       {
                           newOrder.Title = $"Новый заказ клиента {data.LFMName}";
                           newOrder.ClientEmail.Text = $"{data.Email}";
-                          context = new BeanMagas();
-                          context.Product.Load();
-
 
                           try
                           {
-                              newOrder.productName.ItemsSource = context.Product.Local.ToBindingList<Product>();
+                              newOrder.productName.ItemsSource = dbA.LoadProductMethod().Product.Local.ToBindingList<Product>();
 
                               newOrder.ShowDialog();
                           }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:homework_theme_18"
         mc:Ignorable="d"
-        Title="Фасоль" Height="550" Width="650" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Name="Bean">
+        Title="Фасоль" Height="600" Width="650" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Name="Bean">
     <Grid>
         <TabControl HorizontalContentAlignment="Stretch" 
                     VerticalContentAlignment="Stretch" Background="White">

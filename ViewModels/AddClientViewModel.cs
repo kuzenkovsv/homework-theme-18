@@ -7,11 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
+
 namespace homework_theme_18.ViewModels
 {
     public class AddClientViewModel
     {
+        DatabaseAccesses dbA=new DatabaseAccesses();
         MainWindow t;
+
 
         /// <summary>
         /// Добавление клиента
@@ -30,19 +33,13 @@ namespace homework_theme_18.ViewModels
                       {
                           if (newClient.ClientName.Text != null & newClient.Email.Text != null)
                           {
-                              using (BeanMagas db = new BeanMagas())
-                              {
-                                  Clients newcl = new Clients
-                                  {
-                                      LFMName = newClient.ClientName.Text,
-                                      Telephone = newClient.Tel.Text,
-                                      Email = newClient.Email.Text
-                                  };
-                                  db.Clients.Add(newcl);
-                                  db.SaveChanges();
-                                  db.Clients.Load();
-                                  t.clientsTable.ItemsSource = db.Clients.Local.ToBindingList<Clients>().OrderBy(e => e.Id);
-                              }
+                              t.clientsTable.ItemsSource = dbA.AddClientMethod(
+                                  newClient.ClientName.Text, 
+                                  newClient.Tel.Text, 
+                                  newClient.Email.Text)
+                              .Clients.Local.ToBindingList<Clients>()
+                              .OrderBy(e => e.Id);
+
                               MessageBoxResult result = MessageBox.Show($"Клиент {newClient.ClientName.Text} добавлен",
                              "Успешное добавление",
                              MessageBoxButton.OK,

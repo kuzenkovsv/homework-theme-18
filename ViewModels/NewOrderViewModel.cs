@@ -11,6 +11,8 @@ namespace homework_theme_18.ViewModels
 {
     public class NewOrderViewModel
     {
+        DatabaseAccesses dbA = new DatabaseAccesses();
+
         MainWindow t;
 
 
@@ -31,21 +33,13 @@ namespace homework_theme_18.ViewModels
                       {
                           if (newOrd.productName != null)
                           {
-                              using (BeanMagas db = new BeanMagas())
-                              {
-                                  Product row = newOrd.productName.SelectedItem as Product;
-                                  Orders nOrd = new Orders
-                                  {
-                                      ClientEmail = newOrd.ClientEmail.Text,
-                                      IdProduct = newOrd.productName.SelectedIndex + 1,
-                                      ProductName = row.ProductName,
-                                      Quantity = Convert.ToInt32(newOrd.Quantity.Text)
-                                  };
-                                  db.Orders.Add(nOrd);
-                                  db.SaveChanges();
-                                  db.Orders.Load();
-                                  t.order.ItemsSource = db.Orders.Local.ToBindingList<Orders>().OrderBy(e => e.Id);
-                              }
+                              Product row = newOrd.productName.SelectedItem as Product;
+                              t.order.ItemsSource = dbA.AddOrderMethod(
+                                  newOrd.ClientEmail.Text,
+                                  newOrd.productName.SelectedIndex,
+                                  row.ProductName,
+                                  Convert.ToInt32(newOrd.Quantity.Text))
+                              .Orders.Local.ToBindingList<Orders>().OrderBy(e => e.Id);
 
                               MessageBoxResult result = MessageBox.Show($"Заказ успешно добавлен",
                          "Успешно!",

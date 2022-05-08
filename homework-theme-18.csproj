@@ -69,6 +69,7 @@
     </ApplicationDefinition>
     <Compile Include="Clients.cs" />
     <Compile Include="BeanMagas.cs" />
+    <Compile Include="DatabaseAccesses.cs" />
     <Compile Include="Migrations\202204251938594_MigrateDB-26.04.2022.cs" />
     <Compile Include="Migrations\202204251938594_MigrateDB-26.04.2022.designer.cs">
       <DependentUpon>202204251938594_MigrateDB-26.04.2022.cs</DependentUpon>

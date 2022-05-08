@@ -55,3 +55,4 @@ D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.csproj.CopyComplete
 D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.exe
 D:\Prog_C#\homework-theme-18\obj\Debug\homework-theme-18.pdb
 D:\Prog_C#\homework-theme-18\obj\Debug\homework_theme_18.Migrations.MigrateDB26042022.resources
+D:\Библиотека\skillbox\Обучение\1. C#\18. Entity Framework\homework-theme-18\obj\Debug\homework_theme_18.Migrations.MigrateDB26042022.resources

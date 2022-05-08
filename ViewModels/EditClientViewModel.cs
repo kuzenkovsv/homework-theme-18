@@ -11,8 +11,8 @@ namespace homework_theme_18.ViewModels
 {
     public class EditClientViewModel
     {
+        DatabaseAccesses dbA = new DatabaseAccesses();
         MainWindow t;
-
 
         /// <summary>
         /// Редактирование клиента
@@ -32,31 +32,13 @@ namespace homework_theme_18.ViewModels
                           if (edClient.ClientName.Text != null & edClient.Email.Text != null)
                           {
 
-                              int ID = Convert.ToInt32(edClient.ID);
-
-                              using (BeanMagas db = new BeanMagas())
-                              {
-                                  //foreach (var item in db.Clients)
-                                  //{
-                                  //    if (item.Id == ID)
-                                  //    {
-                                  //        item.LFMName = edClient.ClientName.Text;
-                                  //        item.Telephone = edClient.Tel.Text;
-                                  //        item.Email = edClient.Email.Text;
-                                  //        db.SaveChanges();
-                                  //    }
-                                  //}
-
-                                  Clients client = db.Clients.Find(ID);
-                                  client.LFMName = edClient.ClientName.Text;
-                                  client.Telephone = edClient.Tel.Text;
-                                  client.Email = edClient.Email.Text;
-                                  db.SaveChanges();
-
-                                  db.Clients.Load();
-                                  t.clientsTable.ItemsSource = db.Clients.Local.ToBindingList<Clients>().OrderBy(e => e.Id);
-                              }
-
+                              int ID = Convert.ToInt32(edClient.ID.Text);
+                              t.clientsTable.ItemsSource = dbA.EditClientMethod(ID,
+                                 edClient.ClientName.Text,
+                                 edClient.Tel.Text,
+                                 edClient.Email.Text)
+                             .Clients.Local.ToBindingList<Clients>()
+                             .OrderBy(e => e.Id);
 
                               MessageBoxResult result = MessageBox.Show($"Данные клиента отредактированы",
                           "Успешное изменение",
